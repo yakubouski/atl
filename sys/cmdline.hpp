@@ -57,6 +57,9 @@ namespace atl {
 
 
 		public:
+			/*
+			* Define options and parse command line
+			*/
 			template<typename ... ARGS>
 			void options(int argc, char* argv[], ARGS&& ... args) const throw (int) {
 				vector<struct ::option> options_long = { args...,{0,0,nullptr,0} };
@@ -93,11 +96,17 @@ namespace atl {
 					}
 				}
 			}
-
+			/*
+			* Check options exist
+			* @return bool
+			*/
 			bool is(const char* long_name) const {
 				return options_list.find({ long_name }) != options_list.end();
 			}
-
+			/*
+			* Get parsed command line option value
+			* @return int
+			*/
 			int operator() (const char* long_name, int default_value) const {
 				auto it = options_list.find({ long_name });
 				if (it != options_list.end()) {
@@ -105,7 +114,10 @@ namespace atl {
 				}
 				return default_value;
 			}
-
+			/*
+			* Get parsed command line option value
+			* @return double
+			*/
 			double operator() (const char* long_name, double default_value) const {
 				auto it = options_list.find({ long_name });
 				if (it != options_list.end()) {
@@ -113,7 +125,10 @@ namespace atl {
 				}
 				return default_value;
 			}
-
+			/*
+			* Get parsed command line option value
+			* @return const char*
+			*/
 			const char* operator() (const char* long_name, const char* default_value) const {
 				auto it = options_list.find({ long_name });
 				if (it != options_list.end()) {
