@@ -106,7 +106,7 @@ namespace atl {
 				return default_value;
 			}
 
-			float operator() (const char* long_name, float default_value) const {
+			double operator() (const char* long_name, double default_value) const {
 				auto it = options_list.find({ long_name });
 				if (it != options_list.end()) {
 					return std::atof(it->value);
