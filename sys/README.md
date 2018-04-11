@@ -9,7 +9,8 @@ using namespace atl::sys;
 
 int main(int argc, char* argv[])
 {
-  /* Define command line argumnets, long option name are required */
+	command_line cmdline;
+  	/* Define command line argumnets, long option name are required */
 	cmdline.options(argc, argv,
 		command_line::option("aname", 1, 'a'),  /* long name[, option value required (0 - not require, 1 - require)[,short option name]] */
 		command_line::option("bname", 0, 'b'),
