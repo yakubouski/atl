@@ -33,7 +33,7 @@ namespace atl {
 				operator struct ::option() const { return { long_name,required ,nullptr,short_name }; }
 
 			public:
-				option(const char* long_name, const char short_name = 0, int required = 0) : short_name(short_name), long_name(long_name), required(required), value(nullptr) { ; }
+				option(const char* long_name, int required = 0, const char short_name = 0) : short_name(short_name), long_name(long_name), required(required), value(nullptr) { ; }
 				option(const char* long_name, const char short_name, int required, const char* value) : short_name(short_name), long_name(long_name), required(required), value(value) { ; }
 
 				class hash {
