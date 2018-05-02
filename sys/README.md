@@ -3,7 +3,7 @@
 Command line options parser example
 
 ```C++
-#include "sys/cmndline.hpp"
+#include "sys/cmdline.hpp"
 
 using namespace atl::sys;
 
